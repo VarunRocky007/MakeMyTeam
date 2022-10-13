@@ -1,0 +1,49 @@
+{
+  "userProfile": [
+    {
+      "userid": 1,
+      "profilePicture": "",
+      "userName": "SmileyBoySunny1",
+      "userFirstName": "Sunny",
+      "userLastName": "Jadon",
+      "userDesignation": null,
+      "userContactNumber": "9876543210"
+    },
+    {
+      "userid": 2,
+      "profilePicture": "",
+      "userName": "SmileyBoySunny2",
+      "userFirstName": "Sunny",
+      "userLastName": "Jadon",
+      "userDesignation": null,
+      "userContactNumber": "9876543214"
+    },
+    {
+      "userid": 3,
+      "profilePicture": "",
+      "userName": "SmileyBoySunny3",
+      "userFirstName": "Sunny",
+      "userLastName": "Jadon",
+      "userDesignation": null,
+      "userContactNumber": "9876543211"
+    },
+    {
+      "userid": 4,
+      "profilePicture": "",
+      "userName": "SmileyBoySunny4",
+      "userFirstName": "Sunny",
+      "userLastName": "Jadon",
+      "userDesignation": null,
+      "userContactNumber": "9876543212"
+    },
+    {
+      "userid": 5,
+      "profilePicture": "",
+      "userName": "SmileyBoySunny5",
+      "userFirstName": "Sunny",
+      "userLastName": "Jadon",
+      "userDesignation": null,
+      "userContactNumber": "9876543213"
+    }
+  ]
+}

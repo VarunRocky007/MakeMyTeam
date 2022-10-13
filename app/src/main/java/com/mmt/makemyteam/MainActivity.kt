@@ -15,13 +15,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.mmt.makemyteam.composables.ShowUserProfile
 import com.mmt.makemyteam.model.UserInfo
 import com.mmt.makemyteam.model.UserProfile
+import com.mmt.makemyteam.model.getMockData
 import com.mmt.makemyteam.ui.theme.MakeMyTeamTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println(getMockData(applicationContext, "default.json"))
         setContent {
-            MakeMyTeamTheme {
+            MakeMyTeamTheme (darkTheme = true){
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
