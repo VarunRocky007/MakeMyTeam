@@ -16,14 +16,15 @@ import com.mmt.makemyteam.composables.ShowUserProfile
 import com.mmt.makemyteam.model.UserInfo
 import com.mmt.makemyteam.model.UserProfile
 import com.mmt.makemyteam.model.getMockData
+import com.mmt.makemyteam.model.parseJsonString
 import com.mmt.makemyteam.ui.theme.MakeMyTeamTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println(getMockData(applicationContext, "default.json"))
+        val userInfo: UserInfo? = parseJsonString(getMockData(applicationContext, "default.json"))
         setContent {
-            MakeMyTeamTheme (darkTheme = true){
+            MakeMyTeamTheme(darkTheme = true) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -49,7 +50,7 @@ class MainActivity : ComponentActivity() {
 }
 
 
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES,)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun DefaultPreview() {
     MakeMyTeamTheme {
