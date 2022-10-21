@@ -19,10 +19,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.mmt.makemyteam.R
-import com.mmt.makemyteam.model.UserInfo
+import com.mmt.makemyteam.model.PlayerInfo
 
 @Composable
-fun ShowProfileCard(userInfo: UserInfo) {
+fun ShowProfileCard(userInfo: PlayerInfo) {
     Card(
         Modifier
             .fillMaxWidth()
