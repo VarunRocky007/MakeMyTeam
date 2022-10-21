@@ -11,10 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.mmt.makemyteam.composables.ShowUserProfile
-import com.mmt.makemyteam.model.PlayerInfo
-import com.mmt.makemyteam.model.PlayerProfile
-import com.mmt.makemyteam.model.getMockData
-import com.mmt.makemyteam.model.parseJsonString
+import com.mmt.makemyteam.model.*
 import com.mmt.makemyteam.ui.theme.MakeMyTeamTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,6 +35,20 @@ class MainActivity : ComponentActivity() {
                                 userLastName = "Bhadoria",
                                 userContactNumber = 9826211043,
                                 userDesignation = "Captain"
+                            ),
+                            listOf(
+                                TeamInfo(
+                                    teamId = 1,
+                                    teamProfilePicture = null,
+                                    teamName = "MAHAKAL CRICKET CLUB",
+                                    teamCaption = null
+                                ),
+                                TeamInfo(
+                                    teamId = 2,
+                                    teamProfilePicture = null,
+                                    teamName = "BHAWANI CRICKET CLUB",
+                                    teamCaption = null
+                                )
                             )
                         )
                     )
@@ -62,6 +73,14 @@ fun DefaultPreview() {
                     userLastName = "Bhadoria",
                     userContactNumber = 9826211043,
                     userDesignation = "Captain"
+                ),
+                listOf(
+                    TeamInfo(
+                        teamId = 1,
+                        teamProfilePicture = null,
+                        teamName = "MAHAKAL CRICKET CLUB",
+                        teamCaption = null
+                    )
                 )
             )
         )

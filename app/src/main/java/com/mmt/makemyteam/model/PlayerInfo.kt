@@ -3,6 +3,7 @@ package com.mmt.makemyteam.model
 import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 import okio.IOException
 
@@ -13,7 +14,7 @@ data class PlayerInfo(
     @SerializedName("userFirstName") val userFirstName: String,
     @SerializedName("userLastName") val userLastName: String,
     @SerializedName("userDesignation") val userDesignation: String?,
-    @SerializedName("userContactNumber") val userContactNumber: Long
+    @SerializedName("userContactNumber") val userContactNumber: Long,
 )
 
 fun getMockData(context: Context, fileName: String): String {

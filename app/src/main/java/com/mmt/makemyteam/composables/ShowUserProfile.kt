@@ -7,7 +7,9 @@ import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.mmt.makemyteam.model.PlayerProfile
+import com.mmt.makemyteam.model.TeamInfo
 
 @Composable
 fun ShowUserProfile(playerProfile: PlayerProfile) {
@@ -24,12 +26,14 @@ fun ShowUserProfile(playerProfile: PlayerProfile) {
         }) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 ShowProfileCard(userInfo = playerProfile.userInfo)
-                Spacer(
-                    modifier = Modifier
+                Spacer(modifier = Modifier
+                    .fillMaxWidth()
+                    .height(5.dp))
+                    ShowMyTeamsBar(playerProfile.teamInfoList, onclickAction = {})
+                    Spacer(modifier = Modifier
                         .fillMaxWidth()
-                        .fillMaxHeight(0.022f)
-                )
-                ShowMyTeamsBar(title = "My Teams", onclickAction = {})
+                        .height(5.dp))
+
             }
         }
     }

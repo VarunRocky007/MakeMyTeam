@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.HorizontalAlignmentLine
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -29,9 +30,8 @@ fun ShowProfileCard(userInfo: PlayerInfo) {
             .padding(2.dp)
             .wrapContentHeight(align = Alignment.Top),
         shape = RoundedCornerShape(24.dp),
-        backgroundColor = Color.DarkGray,
-
-        ) {
+        backgroundColor = Color.DarkGray
+    ) {
         Row {
 
             Card(
@@ -112,7 +112,7 @@ fun ShowProfileCard(userInfo: PlayerInfo) {
                         .size(40.dp)
                         .fillMaxSize()
                         .clickable { /* TODO */ },
-                    alignment = Alignment.Center,
+                    alignment = Alignment.CenterEnd,
                 )
             }
         }
