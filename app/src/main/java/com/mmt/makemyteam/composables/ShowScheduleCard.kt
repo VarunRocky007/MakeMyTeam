@@ -34,7 +34,7 @@ fun ShowScheduleCard(matchInfoList: List<MatchInfo>, onclickAction: () -> Unit) 
                 .padding(2.dp)
                 .shadow(shape = RoundedCornerShape(2.dp), elevation = 1.dp)
                 .background(MaterialTheme.colors.background),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top
         )
         {
@@ -43,7 +43,7 @@ fun ShowScheduleCard(matchInfoList: List<MatchInfo>, onclickAction: () -> Unit) 
                 horizontalArrangement = Arrangement.Center
             ) {
                 Utilities().CardHeaderText(
-                    text = "Match Schedule",
+                    text = "My Matches",
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .padding(start = 4.dp, end = 2.dp)
@@ -51,11 +51,11 @@ fun ShowScheduleCard(matchInfoList: List<MatchInfo>, onclickAction: () -> Unit) 
                     fontSize = 28.sp,
                     color = MaterialTheme.colors.onBackground
                 )
-                Spacer(modifier = Modifier.width(10.dp))
                 ShowGreenPlusIcon {
                     onclickAction
                 }
             }
+            Spacer(modifier = Modifier.height(10.dp))
             Column(
                 Modifier
                     .fillMaxHeight()
@@ -68,7 +68,7 @@ fun ShowScheduleCard(matchInfoList: List<MatchInfo>, onclickAction: () -> Unit) 
                     Spacer(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(5.dp)
+                            .height(3.dp)
                     )
                 }
             }

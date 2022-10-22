@@ -20,7 +20,7 @@ fun ShowGreenPlusIcon(onClickAction: () -> Unit) {
         onClick = { onClickAction },
         modifier = Modifier.size(30.dp),
         shape = CircleShape,
-        border = BorderStroke(4.dp, Color(0xFF108149)),
+        border = BorderStroke(4.dp, Color(0xFF1B3629)),
         contentPadding = PaddingValues(0.dp),
         colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.Blue)
     ) {
@@ -28,7 +28,7 @@ fun ShowGreenPlusIcon(onClickAction: () -> Unit) {
         Icon(
             Icons.Default.Add,
             contentDescription = "content description",
-            tint = Color(0XFF0F9D58)
+            tint = Color(0xFF1D4934)
         )
     }
 

@@ -52,6 +52,20 @@ class MainActivity : ComponentActivity() {
                                     teamName = "BHAWANI CRICKET CLUB",
                                     teamCaption = null,
                                     teamMembers = null
+                                ),
+                                TeamInfo(
+                                    teamId = 3,
+                                    teamProfilePicture = null,
+                                    teamName = "BHAWANI CRICKET CLUB",
+                                    teamCaption = null,
+                                    teamMembers = null
+                                ),
+                                TeamInfo(
+                                    teamId = 4,
+                                    teamProfilePicture = null,
+                                    teamName = "BHAWANI CRICKET CLUB",
+                                    teamCaption = null,
+                                    teamMembers = null
                                 )
                             ),
                             matchInfoList = listOf(
@@ -91,6 +105,20 @@ class MainActivity : ComponentActivity() {
                                 ),
                                 MatchInfo(
                                     matchId = 6,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ),
+                                MatchInfo(
+                                    matchId = 7,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ),
+                                MatchInfo(
+                                    matchId = 8,
                                     matchDate = null,
                                     matchTime = null,
                                     myTeam = null,

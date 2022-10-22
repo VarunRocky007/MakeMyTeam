@@ -40,12 +40,12 @@ fun ShowMyTeamsBar(teamInfoList: List<TeamInfo>, onclickAction: () -> Unit) {
                 .background(MaterialTheme.colors.background)
                 .padding(start = 1.dp),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.Start
 
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Utilities().CardHeaderText(
-                    text = "MY Teams",
+                    text = "My Teams",
                     textAlign = TextAlign.Center,
                     modifier = Modifier.padding(start = 4.dp, end = 2.dp),
                     fontSize = 28.sp,
