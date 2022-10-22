@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,8 +30,7 @@ fun ShowProfileCard(userInfo: PlayerInfo) {
             .fillMaxWidth()
             .padding(2.dp)
             .wrapContentHeight(align = Alignment.Top),
-        shape = RoundedCornerShape(24.dp),
-        backgroundColor = Color.DarkGray
+        backgroundColor = MaterialTheme.colors.background
     ) {
         Row {
 
@@ -63,15 +63,15 @@ fun ShowProfileCard(userInfo: PlayerInfo) {
                 Text(
                     text = userInfo.userFirstName + " " + userInfo.userLastName,
                     modifier = Modifier.padding(2.dp),
-                    color = Color.White,
+                    color = MaterialTheme.colors.onBackground,
                     fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
+                    fontSize = 30.sp
                 )
                 Text(
                     text = userInfo.userContactNumber.toString(),
                     modifier = Modifier.padding(2.dp),
-                    color = Color.White,
+                    color = MaterialTheme.colors.onBackground,
                     fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 12.sp
@@ -80,40 +80,12 @@ fun ShowProfileCard(userInfo: PlayerInfo) {
                     Text(
                         text = userInfo.userDesignation,
                         modifier = Modifier.padding(2.dp),
-                        color = Color.White,
+                        color = MaterialTheme.colors.onBackground,
                         fontFamily = FontFamily.Monospace,
                         fontWeight = FontWeight.Light,
-                        fontSize = 10.sp
+                        fontSize = 20.sp
                     )
                 }
-            }
-
-            Card(
-                shape = CircleShape,
-                modifier = Modifier
-                    .size(40.dp)
-                    .align(Alignment.CenterVertically),
-                backgroundColor = Color.Gray,
-                border = BorderStroke(
-                    width = 0.5.dp,
-                    color = Color.DarkGray,
-                )
-            ) {
-                val customPainterResource = if (false) {
-                    painterResource(id = R.drawable.ic_green_tick)
-                } else {
-                    painterResource(id = R.drawable.ic_red_cross)
-                }
-                Image(
-                    painter =
-                    customPainterResource,
-                    contentDescription = "Player accepted/reject request",
-                    modifier = Modifier
-                        .size(40.dp)
-                        .fillMaxSize()
-                        .clickable { /* TODO */ },
-                    alignment = Alignment.CenterEnd,
-                )
             }
         }
     }

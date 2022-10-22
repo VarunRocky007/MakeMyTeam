@@ -26,13 +26,22 @@ fun ShowUserProfile(playerProfile: PlayerProfile) {
         }) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 ShowProfileCard(userInfo = playerProfile.userInfo)
-                Spacer(modifier = Modifier
-                    .fillMaxWidth()
-                    .height(5.dp))
-                    ShowMyTeamsBar(playerProfile.teamInfoList, onclickAction = {})
-                    Spacer(modifier = Modifier
+                Spacer(
+                    modifier = Modifier
                         .fillMaxWidth()
-                        .height(5.dp))
+                        .height(5.dp)
+                )
+                playerProfile.teamInfoList?.let { it -> ShowMyTeamsBar(it, onclickAction = {}) }
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(5.dp)
+                )
+                playerProfile.matchInfoList?.let { it1 ->
+                    ShowScheduleCard(
+                        matchInfoList = it1,
+                        onclickAction = {})
+                }
 
             }
         }

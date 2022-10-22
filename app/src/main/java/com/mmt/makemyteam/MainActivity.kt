@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     ShowUserProfile(
                         PlayerProfile(
+                            userInfo =
                             PlayerInfo(
                                 userId = 1,
                                 profilePicture = null,
@@ -36,18 +37,64 @@ class MainActivity : ComponentActivity() {
                                 userContactNumber = 9826211043,
                                 userDesignation = "Captain"
                             ),
+                            teamInfoList =
                             listOf(
                                 TeamInfo(
                                     teamId = 1,
                                     teamProfilePicture = null,
                                     teamName = "MAHAKAL CRICKET CLUB",
-                                    teamCaption = null
+                                    teamCaption = null,
+                                    teamMembers = null
                                 ),
                                 TeamInfo(
                                     teamId = 2,
                                     teamProfilePicture = null,
                                     teamName = "BHAWANI CRICKET CLUB",
-                                    teamCaption = null
+                                    teamCaption = null,
+                                    teamMembers = null
+                                )
+                            ),
+                            matchInfoList = listOf(
+                                MatchInfo(
+                                    matchId = 1,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ),
+                                MatchInfo(
+                                    matchId = 2,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ),
+                                MatchInfo(
+                                    matchId = 3,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ),
+                                MatchInfo(
+                                    matchId = 4,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ), MatchInfo(
+                                    matchId = 5,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
+                                ),
+                                MatchInfo(
+                                    matchId = 6,
+                                    matchDate = null,
+                                    matchTime = null,
+                                    myTeam = null,
+                                    opponentTeam = null
                                 )
                             )
                         )
@@ -79,9 +126,11 @@ fun DefaultPreview() {
                         teamId = 1,
                         teamProfilePicture = null,
                         teamName = "MAHAKAL CRICKET CLUB",
-                        teamCaption = null
+                        teamCaption = null,
+                        teamMembers = null
                     )
-                )
+                ),
+                null
             )
         )
     }

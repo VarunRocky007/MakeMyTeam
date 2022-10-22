@@ -2,13 +2,8 @@ package com.mmt.makemyteam.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
@@ -21,53 +16,55 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mmt.makemyteam.model.TeamInfo
+import com.mmt.makemyteam.model.MatchInfo
 import com.mmt.makemyteam.ui.theme.Utilities
 
 @Composable
-fun ShowMyTeamsBar(teamInfoList: List<TeamInfo>, onclickAction: () -> Unit) {
+fun ShowScheduleCard(matchInfoList: List<MatchInfo>, onclickAction: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .wrapContentHeight(align = Alignment.CenterVertically)
-            .height(200.dp)
-    ) {
+            .fillMaxHeight()
+            .wrapContentHeight(),
+    )
+    {
         Column(
             modifier = Modifier
-                .clickable { onclickAction }
-                .width(width = 250.dp)
-                .wrapContentHeight(align = Alignment.Top)
-                .background(MaterialTheme.colors.background)
-                .padding(start = 1.dp),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+                .fillMaxWidth()
+                .padding(2.dp)
+                .shadow(shape = RoundedCornerShape(2.dp), elevation = 1.dp)
+                .background(MaterialTheme.colors.background),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top
+        )
+        {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
                 Utilities().CardHeaderText(
-                    text = "MY Teams",
+                    text = "Match Schedule",
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(start = 4.dp, end = 2.dp),
+                    modifier = Modifier
+                        .padding(start = 4.dp, end = 2.dp)
+                        .clickable { onclickAction },
                     fontSize = 28.sp,
                     color = MaterialTheme.colors.onBackground
                 )
+                Spacer(modifier = Modifier.width(10.dp))
                 ShowGreenPlusIcon {
+                    onclickAction
                 }
             }
-            Spacer(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(20.dp)
-            )
-
             Column(
                 Modifier
+                    .fillMaxHeight()
                     .wrapContentHeight()
                     .verticalScroll(rememberScrollState())
             ) {
 
-                teamInfoList.forEach { teamInfo ->
-                    ShowTeamNameBar(teamInfo = teamInfo) {}
+                matchInfoList.forEach { matchInfo ->
+                    ShowMatchBar(matchInfo = matchInfo) {}
                     Spacer(
                         modifier = Modifier
                             .fillMaxWidth()

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,24 +20,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.mmt.makemyteam.R
-import com.mmt.makemyteam.model.PlayerInfo
 import com.mmt.makemyteam.model.TeamInfo
 import com.mmt.makemyteam.ui.theme.Utilities
 
 @Composable
 fun ShowTeamNameBar(teamInfo: TeamInfo, onclickAction: () -> Unit) {
-    Row() {
+    Row {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(2.dp)
-                .height(60.dp)
                 .shadow(shape = RoundedCornerShape(2.dp), elevation = 1.dp)
-                .background(Color.Gray),
+                .background(Color.DarkGray),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start
+            ) {
                 Card(
                     shape = CircleShape,
                     modifier = Modifier.size(65.dp),
@@ -66,8 +68,12 @@ fun ShowTeamNameBar(teamInfo: TeamInfo, onclickAction: () -> Unit) {
                     text = teamInfo.teamName.take(20).uppercase(),
                     textAlign = TextAlign.Center,
                     fontSize = 24.sp,
+                    color = MaterialTheme.colors.onBackground,
                     modifier = Modifier
-                        .padding(start = 4.dp, end = 2.dp)
+                        .padding(
+                            start = 4.dp,
+                            end = 2.dp
+                        )
                         .clickable { onclickAction }
                 )
             }
